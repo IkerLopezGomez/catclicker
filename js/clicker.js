@@ -28,3 +28,9 @@ function pintarGatoActivo(){
     document.getElementById("nombre").innerHTML = data.gatos[data.gatosActivos].name;
     document.getElementById("caricias").innerHTML = data.gatos[data.gatosActivos].nclicks;
 }
+
+//HACEMOS QUE EL GATITO REACCIONA A LAS CARICIAS
+document.getElementById("gatito").addEventListener('click', function(e){
+    data.gatos[data.gatosActivos].nclicks++;
+    pintarGatoActivo();
+});
