@@ -17,5 +17,14 @@ document.getElementById("catlist").innerHTML = htmlString;
 
 //HACEMOS QUE CADA GATITO REACCIONE A LOS CLICKS
 document.getElementById("catlist").addEventListener('click', function(e){
-    console.log("Has acariciado a " + e.target.id)
+    console.log("Has acariciado a " + e.target.id);
+    data.gatosActivos = e.target.id;
+    pintarGatoActivo();
 });
+
+//PINTAMOS AL GATITO ACARICIADO
+function pintarGatoActivo(){
+    document.getElementById("gatito").src = data.gatos[data.gatosActivos].image;
+    document.getElementById("nombre").innerHTML = data.gatos[data.gatosActivos].name;
+    document.getElementById("caricias").innerHTML = data.gatos[data.gatosActivos].nclicks;
+}
